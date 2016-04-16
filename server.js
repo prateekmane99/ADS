@@ -34,12 +34,13 @@ app.get('/query1' , function(req, res) {
 	PythonShell.run('abc.py', options, function (err, results) {
   	if (err) throw err;
   	// results is an array consisting of messages collected during execution
-  	
+  	console.log(results)
   	output = JSON.parse(results);
-  	var scoredLabels = output.Results.output1.value.Values[0][0];
-  	var scoreProb = output.Results.output1.value.Values[0][1];
+  	var scoredLabels = output.Results.BostonPropertyOutput.value.Values[0][0];
+  	// var scoreProb = output.Results.BostonPropertyOutput.value.Values[0][1];
+    var scoreProb = 0;
 
-  	console.log('DERYL RODRIGUES %j', output);
+  	console.log('POP %j', output);
   	res.send(row_1+','+scoredLabels+','+scoreProb);
   	
 	});

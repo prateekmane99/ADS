@@ -41,7 +41,7 @@ def main():
 
         "Inputs": {
 
-                "input1":
+                "Input1":
                 {
                     "ColumnNames" : header.split(','),
                     "Values": abc #values.split(',')
@@ -51,15 +51,21 @@ def main():
         }
 
 
-    #print(data)
+    # print(data)
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://ussouthcentral.services.azureml.net/workspaces/607045d56e9b4577abd84aab779dc2eb/services/7027c367da5749e3afbf9be9df0f332b/execute?api-version=2.0&details=true'
-    api_key = 'fH6A1sYHRz5fWa8Q4iHEAZpjXi0uHmK+EIHi7kwwUYueWaLNqIaS/gcr+gqr3QuP3ICgTsIX+4VYH+9+K+ifKg==' # Replace this with the API key for the web service
+   # url = 'https://ussouthcentral.services.azureml.net/workspaces/607045d56e9b4577abd84aab779dc2eb/services/7027c367da5749e3afbf9be9df0f332b/execute?api-version=2.0&details=true'
+    # api_key = 'fH6A1sYHRz5fWa8Q4iHEAZpjXi0uHmK+EIHi7kwwUYueWaLNqIaS/gcr+gqr3QuP3ICgTsIX+4VYH+9+K+ifKg==' # Replace this with the API key for the web service
+    
+
+    url = 'https://ussouthcentral.services.azureml.net/workspaces/8aba4c4d1e034b56941f1f916e884791/services/25e8f06d5e7048bfa64f92cdb249c274/execute?api-version=2.0&details=true'
+    api_key = 'fy4lM67b2VzYJzELzVqqG6zxoodR1OFfi60GbTRabIHaBZfRAJrO1OHhehHKfc8n/TyJnmLGKXQ2JenfPMQUJg=='
+
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib2.Request(url, body, headers) 
+    # print(req)
 
     try:
         response = urllib2.urlopen(req)
